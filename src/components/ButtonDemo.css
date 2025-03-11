@@ -1,0 +1,55 @@
+@import '../styles/variables.css';
+
+.button-demo {
+  background-color: var(--color-off-white);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.button-example {
+  flex: 1;
+  min-width: 250px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-example h3 {
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.dark-background {
+  background-color: var(--color-dark);
+  padding: var(--space-lg);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.full-width-example {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .button-row {
+    flex-direction: column;
+  }
+  
+  .button-example {
+    width: 100%;
+  }
+} 

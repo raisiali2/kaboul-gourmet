@@ -1,0 +1,197 @@
+/* 
+ * Button.css
+ * Styling for Button component based on Galvin's exact design
+ */
+
+@import '../../styles/variables.css';
+
+/* Base Button Styling */
+.btn {
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(var(--button-padding-v) - 3px) calc(var(--button-padding-h) - 3px);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  outline: none;
+  min-width: 160px;
+  line-height: 1.5;
+}
+
+/* Button Variants */
+.btn-primary {
+  display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    padding: calc(var(--button-padding-v) - 3px) calc(var(--button-padding-h) - 3px);
+    text-transform: uppercase;
+    border: 3px solid var(--color-gold);
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    min-width: 160px;
+    line-height: 1.5;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+    color: var(--color-gold);
+}
+
+.btn-secondary {
+  display: inline-block;
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 3px solid var(--color-gold);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    padding: calc(var(--button-padding-v) - 3px) calc(var(--button-padding-h) - 3px);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    min-width: 160px;
+    line-height: 1.5;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gold);
+    color: var(--color-white);
+}
+
+.btn-dark {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+}
+
+.btn-dark:hover {
+  background-color: transparent;
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-gold);
+  border-color: var(--color-white);
+}
+
+.btn-white:hover {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-text {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: none;
+  padding: 0;
+  min-width: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.btn-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Button Sizes */
+.btn-small {
+  font-size: 0.75rem;
+  padding: calc(var(--button-padding-v) * 0.8 - 3px) calc(var(--button-padding-h) * 0.8 - 3px);
+  min-width: 120px;
+}
+
+.btn-medium {
+  /* Default size, already defined in base styles */
+}
+
+.btn-large {
+  padding: calc(var(--button-padding-v) * 1.2 - 3px) calc(var(--button-padding-h) * 1.2 - 3px);
+  font-size: 0.9375rem;
+  min-width: 180px;
+}
+
+/* Full Width Button */
+.btn-full-width {
+  width: 100%;
+  display: block;
+}
+
+/* Active State */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Focus State with keyboard-only focus styles */
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8125rem;
+    min-width: 140px;
+    padding: calc(var(--button-padding-v) * 0.9 - 3px) calc(var(--button-padding-h) * 0.9 - 3px);
+  }
+  
+  .btn-small {
+    min-width: 100px;
+  }
+  
+  .btn-large {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    font-size: 0.75rem;
+    min-width: 120px;
+    padding: calc(var(--button-padding-v) * 0.8 - 3px) calc(var(--button-padding-h) * 0.8 - 3px);
+    letter-spacing: 1.5px;
+  }
+  
+  .btn-small {
+    min-width: 90px;
+  }
+  
+  .btn-large {
+    min-width: 140px;
+  }
+} 

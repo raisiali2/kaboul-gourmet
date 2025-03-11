@@ -1,0 +1,266 @@
+/* 
+ * typography.css - Typography system for Kaboul Gourmet
+ * Refined to match Galvin La Chapelle's elegant typography
+ */
+
+/* Font imports - Matching Galvin's font choices */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+/* Base Typography Variables */
+:root {
+  /* Font Families */
+  --font-heading: 'Cormorant Garamond', serif; /* Primary heading font - matches Galvin's elegant serif */
+  --font-heading-alt: 'Playfair Display', serif; /* Alternative heading font for variety */
+  --font-body: 'Montserrat', sans-serif; /* Body text font - clean, readable sans-serif */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Font Sizes - Following Galvin's elegant proportions */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-xxl: 2rem;     /* 32px */
+  --font-size-h1: 3.5rem;    /* 56px - Large, elegant headings */
+  --font-size-h2: 2.75rem;   /* 44px */
+  --font-size-h3: 2.25rem;   /* 36px */
+  --font-size-h4: 1.875rem;  /* 30px */
+  --font-size-h5: 1.5rem;    /* 24px */
+  --font-size-h6: 1.25rem;   /* 20px */
+  
+  /* Line Heights - Refined spacing */
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Letter Spacing - Elegant spacing adjustments */
+  --letter-spacing-tightest: -0.04em;
+  --letter-spacing-tighter: -0.02em;
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.01em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+}
+
+/* Global Typography Reset */
+html {
+  font-size: 100%; /* Ensures rem units are based on 16px */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-dark);
+}
+
+/* Headings - Refined to match Galvin's elegant style */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  letter-spacing: var(--letter-spacing-tight);
+  font-weight: var(--font-weight-medium); /* Slightly lighter weight for elegance */
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-medium);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Paragraph styles */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Links */
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-medium);
+}
+
+a:hover {
+  color: var(--color-gold-hover);
+}
+
+/* Section titles - Matching Galvin's elegant headings */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+.section-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-gray);
+}
+
+/* Elegant quote styling - for testimonials */
+blockquote {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-dark);
+  border-left: 3px solid var(--color-gold);
+  padding-left: 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Menu Item styling */
+.menu-item-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 0.25rem;
+}
+
+.menu-item-price {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gold);
+}
+
+.menu-item-description {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+/* Special text treatments */
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-small {
+  font-size: var(--font-size-sm);
+}
+
+.text-large {
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive Typography */
+@media (max-width: 1200px) {
+  :root {
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --font-size-h1: 2.75rem;
+    --font-size-h2: 2.25rem;
+    --font-size-h3: 1.875rem;
+  }
+  
+  .section-title {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1.125rem;
+  }
+  
+  blockquote {
+    font-size: var(--font-size-lg);
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-h1: 2.25rem;
+    --font-size-h2: 1.875rem;
+    --font-size-h3: 1.5rem;
+  }
+  
+  .section-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title::after {
+    width: 3rem;
+  }
+} 

@@ -1,0 +1,488 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* Intro Section */
+.intro-section {
+  padding: 90px 0;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.section-title h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #B9985A;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  height: 2px;
+  width: 60px;
+  background-color: #B9985A;
+  border: none;
+  margin: 1rem auto;
+}
+
+.section-subtitle {
+  margin-bottom: 3rem;
+}
+
+.section-subtitle h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--section-padding-sm);
+  align-items: center;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.elegant-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: #B9985A;
+  margin-bottom: var(--section-padding-xs);
+  font-weight: 400;
+}
+
+.intro-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--section-padding-sm);
+}
+
+.intro-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #B9985A;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.intro-button:hover {
+  background-color: #A88748;
+}
+
+.intro-image {
+  position: relative;
+  height: 100%;
+}
+
+.image-placeholder {
+  height: 550px;
+  background-color: #22262c;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stylized Interior Elements */
+.interior-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.window {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(185, 152, 90, 0.3);
+}
+
+.window-1 {
+  top: 20%;
+  left: 15%;
+  width: 30%;
+  height: 40%;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.window-2 {
+  top: 20%;
+  right: 15%;
+  width: 30%;
+  height: 40%;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.arch {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40%;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border: 2px solid rgba(185, 152, 90, 0.3);
+  border-bottom: none;
+}
+
+.table {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 10px;
+  background-color: rgba(185, 152, 90, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.table::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(185, 152, 90, 0.6), rgba(185, 152, 90, 0.1));
+  border-radius: 50%;
+}
+
+.ceiling-light {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.5);
+}
+
+.ceiling-light::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background-color: rgba(185, 152, 90, 0.5);
+}
+
+/* Quote Section */
+.intro-quote {
+  display: flex;
+  margin-top: var(--space-md);
+  align-items: flex-start;
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  line-height: 0.8;
+  color: #B9985A;
+  margin-right: var(--space-sm);
+  font-weight: 500;
+}
+
+.quote-content {
+  flex: 1;
+}
+
+.quote-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: var(--space-xxs);
+  font-weight: 500;
+}
+
+.quote-content cite {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: normal;
+  display: block;
+  font-weight: 400;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.uk-slider-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.testimonial-slider li {
+  display: none;
+}
+
+.testimonial-slider li.uk-active {
+  display: block;
+}
+
+.testimonial-slider blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial-slider p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.testimonial-slider cite {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: normal;
+  display: block;
+}
+
+.testimonial-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.testimonial-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-indicators .indicator.active {
+  background-color: #B9985A;
+}
+
+/* UK-specific classes */
+.uk-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+.uk-text-center {
+  text-align: center;
+}
+
+.uk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.uk-grid-large {
+  margin-left: -40px;
+}
+
+.uk-grid-large > * {
+  padding-left: var(--section-padding-xs);
+}
+
+.uk-width-1-2\@m {
+  width: 50%;
+}
+
+.uk-flex {
+  display: flex;
+}
+
+.uk-flex-middle {
+  align-items: center;
+}
+
+.uk-margin-medium-top {
+  margin-top: var(--space-lg);
+}
+
+/* Interior images styles */
+.intro-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-intro-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.intro-thumbnails {
+  display: flex;
+  gap: 15px;
+}
+
+.intro-thumbnail {
+  width: calc(50% - 7.5px);
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.intro-thumbnail:hover {
+  transform: translateY(-5px);
+}
+
+/* Media queries for responsive images */
+@media (max-width: 1200px) {
+  .elegant-description {
+    font-size: 2rem;
+  }
+  
+  .image-placeholder {
+    height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--section-padding-xs);
+  }
+  
+  .elegant-description {
+    font-size: 1.8rem;
+  }
+  
+  .image-placeholder {
+    height: 450px;
+  }
+  
+  .intro-buttons {
+    justify-content: center;
+  }
+  
+  .main-intro-image {
+    height: 350px;
+  }
+  
+  .intro-thumbnail {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: var(--section-padding-sm) 0;
+  }
+  
+  .elegant-description {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  
+  .intro-quote {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .quote-mark {
+    margin-right: 0;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .image-placeholder {
+    height: 350px;
+  }
+  
+  .main-intro-image {
+    height: 300px;
+  }
+  
+  .intro-thumbnail {
+    height: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-section {
+    padding: var(--section-padding-sm) 0;
+  }
+  
+  .elegant-description {
+    font-size: 1.4rem;
+  }
+  
+  .intro-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .intro-button {
+    width: 100%;
+  }
+  
+  .image-placeholder {
+    height: 300px;
+  }
+  
+  .quote-content p {
+    font-size: 1rem;
+  }
+  
+  .main-intro-image {
+    height: 250px;
+  }
+  
+  .intro-thumbnails {
+    flex-direction: column;
+  }
+  
+  .intro-thumbnail {
+    width: 100%;
+    height: 150px;
+  }
+} 

@@ -1,0 +1,148 @@
+/*
+ * animations.css
+ * Global animation styles for refined interactions
+ * Optimized for 60fps performance
+ */
+
+/* Animated Section - Performance optimized */
+.animated-section {
+  will-change: opacity, transform;
+  /* Reduce paint area */
+  contain: content;
+  /* Hardware acceleration hints */
+  transform: translateZ(0);
+}
+
+/* Hover animations for interactive elements - Optimized for performance */
+.hover-float {
+  transition: transform 0.3s ease;
+  backface-visibility: hidden;
+}
+
+.hover-float:hover {
+  transform: translateY(-5px);
+}
+
+.hover-grow {
+  transition: transform 0.2s ease;
+  backface-visibility: hidden;
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(var(--color-gold-rgb), 0.4);
+}
+
+/* Individual element animations - Using transform for better performance */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  will-change: opacity;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.stagger-item {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Keyframes - Using transform for better performance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optimize for mobile */
+@media (max-width: 768px) {
+  .fade-in-up {
+    transform: translateY(10px); /* Smaller shift on mobile */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Reduce animation duration on mobile */
+  .fade-in, .fade-in-up {
+    animation-duration: 0.5s;
+  }
+}
+
+/* Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hover-float:hover,
+  .hover-grow:hover {
+    transform: none;
+  }
+  
+  .fade-in, .fade-in-up {
+    animation: fadeIn 0.3s ease forwards;
+    transform: none;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Animation Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+} 

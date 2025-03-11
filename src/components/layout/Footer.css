@@ -1,0 +1,231 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* Footer Styles */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-gray);
+  padding: 60px 0 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-column h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer-column p,
+.footer-column address {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: normal;
+}
+
+.footer-column a {
+  color: var(--color-gray);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--color-gold);
+}
+
+.footer-column a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.footer-column a:hover::before {
+  width: 100%;
+}
+
+.footer-hours {
+  margin-bottom: 20px;
+}
+
+.footer-hours p {
+  margin-bottom: 5px;
+}
+
+.footer-hours .day {
+  font-weight: 500;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 20px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  background-color: #333; /* Slightly lighter than the dark background */
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.newsletter-input::placeholder {
+  color: var(--color-gray);
+}
+
+.newsletter-button {
+  padding: 10px 15px;
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: var(--color-gold-hover);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #333; /* Slightly lighter than the dark background */
+  color: var(--color-white);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--color-gold);
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333; /* Slightly lighter than the dark background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  letter-spacing: var(--ls-wider);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--color-gray);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+.copyright {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+/* Footer logo and social icons */
+.footer-logo-image {
+  height: 50px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 30px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-logo-image {
+    height: 40px;
+    max-width: 120px;
+  }
+  
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+} 

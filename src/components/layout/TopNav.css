@@ -1,0 +1,399 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* Site Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Primary Navigation - Dark Bar */
+.primary-nav {
+  background-color: #1C1F2A;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.primary-nav.scrolled {
+  padding: 0.6rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.main-logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #B9985A;
+  letter-spacing: 2px;
+}
+
+.phone-number {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+  color: #B9985A;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #B9985A;
+}
+
+/* Locations Dropdown */
+.locations-dropdown {
+  position: relative;
+}
+
+.locations-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.locations-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.locations-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  background-color: #fff;
+  border-top: 3px solid #B9985A;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.locations-dropdown:hover .locations-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.locations-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.locations-header span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1C1F2A;
+  letter-spacing: 1px;
+}
+
+.locations-list {
+  padding: 10px 0;
+}
+
+.location-item {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.location-item:hover {
+  background-color: #f9f9f9;
+}
+
+.location-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1C1F2A;
+  margin-bottom: 5px;
+}
+
+.location-address {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Book Now Button & Dropdown */
+.book-dropdown {
+  position: relative;
+}
+
+.book-now-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #B9985A;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #a18349;
+}
+
+.calendar-icon {
+  margin-left: 10px;
+}
+
+.book-dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: #fff;
+  border-top: 3px solid #B9985A;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.book-dropdown:hover .book-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.book-dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #1C1F2A;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.book-dropdown-content a:hover {
+  background-color: #f9f9f9;
+}
+
+/* Secondary Navigation - White Bar */
+.secondary-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0.7rem 0;
+  transition: all 0.3s ease;
+}
+
+.secondary-nav.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.restaurant-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-name a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: #1C1F2A;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.restaurant-location {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.menu-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-nav li {
+  position: relative;
+  margin-left: 30px;
+}
+
+.menu-nav a {
+  color: #1C1F2A;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu-nav a:hover, .menu-nav a.active {
+  color: #B9985A;
+}
+
+/* Dropdown Menu Styling */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background-color: #fff;
+  border-top: 3px solid #B9985A;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  color: #1C1F2A;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f9f9f9;
+  color: #B9985A;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .menu-nav {
+    display: none;
+  }
+  
+  .restaurant-name {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .locations-text, .phone-number {
+    display: none;
+  }
+  
+  .nav-link {
+    margin-right: 15px;
+  }
+  
+  .book-now-btn {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.5rem;
+  }
+  
+  .nav-link {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .restaurant-name a {
+    font-size: 1.3rem;
+  }
+} 

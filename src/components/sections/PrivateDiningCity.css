@@ -1,0 +1,382 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* Private Dining City Section */
+.private-dining-city-section {
+  background-color: #B9985A;
+  padding: 80px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.private-dining-city-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: var(--space-md);
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.section-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.section-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.button-container {
+  margin-bottom: var(--space-lg);
+}
+
+.discover-button {
+  display: inline-block;
+  padding: 12px 40px;
+  background-color: #fff;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.discover-button:hover {
+  background-color: #f9f9f9;
+}
+
+/* Rooms Slider Container */
+.rooms-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  max-width: 100%;
+}
+
+/* Rooms Display Section */
+.rooms-display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  height: 400px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.room-container {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.room-container.gallery {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), #3a3a3a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect fill='%23333333' width='50' height='50'/%3E%3Crect fill='%23444444' x='50' width='50' height='50'/%3E%3Crect fill='%23444444' y='50' width='50' height='50'/%3E%3Crect fill='%23333333' x='50' y='50' width='50' height='50'/%3E%3C/svg%3E");
+}
+
+.room-container.arch {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), #444 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect fill='%23444444' width='50' height='50'/%3E%3Crect fill='%23555555' x='50' width='50' height='50'/%3E%3Crect fill='%23555555' y='50' width='50' height='50'/%3E%3Crect fill='%23444444' x='50' y='50' width='50' height='50'/%3E%3C/svg%3E");
+}
+
+.room-container.exclusive {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), #555 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect fill='%23505050' width='50' height='50'/%3E%3Crect fill='%23606060' x='50' width='50' height='50'/%3E%3Crect fill='%23606060' y='50' width='50' height='50'/%3E%3Crect fill='%23505050' x='50' y='50' width='50' height='50'/%3E%3C/svg%3E");
+}
+
+.room-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.room-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: var(--space-xxs);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.room-location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+.room-button-group {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.room-action-button {
+  display: inline-block;
+  padding: var(--space-xs) 20px;
+  background-color: #fff;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.room-action-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.room-action-button.small {
+  padding: var(--space-xs) 15px;
+  font-size: 0.65rem;
+}
+
+/* Arrow Controls */
+.slider-arrow {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.slider-arrow:hover {
+  opacity: 1;
+}
+
+.slider-arrow.prev {
+  margin-right: var(--space-xs);
+}
+
+.slider-arrow.next {
+  margin-left: var(--space-xs);
+}
+
+.arrow-icon {
+  line-height: 0.7;
+}
+
+.decorative-curve {
+  width: 100%;
+  height: 90px;
+  position: relative;
+  margin-top: var(--section-padding-xs);
+  overflow: hidden;
+}
+
+.decorative-curve::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  opacity: 0.25;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Room image styles */
+.room-image-container {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.room-container:hover .room-image {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .private-dining-city-section {
+    padding: var(--section-padding-sm) 0 40px;
+  }
+  
+  .rooms-display {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 4px;
+  }
+  
+  .room-container {
+    height: 250px;
+  }
+  
+  .room-name {
+    font-size: 1.3rem;
+  }
+  
+  .slider-arrow {
+    font-size: 2.5rem;
+  }
+  
+  .room-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .room-container {
+    height: 200px;
+  }
+  
+  .room-name {
+    font-size: 1.2rem;
+  }
+  
+  .room-location {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .room-action-button {
+    padding: 6px 15px;
+    font-size: 0.6rem;
+  }
+  
+  .slider-arrow {
+    font-size: 2rem;
+    width: 30px;
+  }
+  
+  .room-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .private-dining-city-section {
+    padding: var(--section-padding-sm) 0 30px;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  .discover-button {
+    padding: var(--space-xs) 30px;
+    font-size: 0.7rem;
+  }
+  
+  .room-container {
+    height: 180px;
+  }
+  
+  .room-name {
+    font-size: 1.1rem;
+  }
+  
+  .room-location {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .room-button-group {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  
+  .slider-arrow {
+    font-size: 1.5rem;
+    width: 25px;
+  }
+  
+  .slider-arrow.prev {
+    margin-right: var(--space-xxs);
+  }
+  
+  .slider-arrow.next {
+    margin-left: var(--space-xxs);
+  }
+  
+  .room-image {
+    height: 200px;
+  }
+} 

@@ -1,0 +1,281 @@
+/* 
+ * Button.css - Refined button styles matching Galvin La Chapelle's elegant design
+ */
+
+/* Importing variables */
+@import '../styles/variables.css';
+
+/* Base Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 180px;
+  height: 52px;
+  padding: var(--button-padding-v) var(--button-padding-h);
+  font-family: var(--font-body);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary Button - Gold fill with white text */
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Secondary Button - White with gold border */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(var(--color-gold-rgb), 0.05);
+  border-color: var(--color-gold);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Text Button - No background, just text */
+.btn-text {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: none;
+  min-width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  height: auto;
+  letter-spacing: 0.05em;
+}
+
+.btn-text:hover {
+  color: var(--color-gold-hover);
+  background-color: transparent;
+}
+
+.btn-text:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold-hover);
+  transition: width 0.3s ease;
+}
+
+.btn-text:hover:after {
+  width: 100%;
+}
+
+/* Dark Button - Dark background with white text */
+.btn-dark {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border: 2px solid var(--color-dark);
+}
+
+.btn-dark:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+/* White Button - White background with dark text */
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: 2px solid var(--color-white);
+}
+
+.btn-white:hover {
+  background-color: var(--color-off-white);
+  border-color: var(--color-off-white);
+}
+
+/* Button Sizes */
+.btn-sm {
+  min-width: 140px;
+  height: 42px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8125rem; /* 13px */
+}
+
+.btn-lg {
+  min-width: 220px;
+  height: 60px;
+  padding: 1rem 2.5rem;
+  font-size: 0.9375rem; /* 15px */
+}
+
+/* Button with icon */
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-icon-left .btn-icon {
+  margin-right: 8px;
+}
+
+.btn-icon-right .btn-icon {
+  margin-left: 8px;
+}
+
+/* Full width button for mobile */
+.btn-full {
+  width: 100%;
+}
+
+/* Button group - for adjacent buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-group-center {
+  justify-content: center;
+}
+
+.btn-group-end {
+  justify-content: flex-end;
+}
+
+/* Special Book Now Button with gold border effect */
+.btn-book-now {
+  position: relative;
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-book-now:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-book-now:hover {
+  color: var(--color-white);
+}
+
+.btn-book-now:hover:before {
+  width: 100%;
+}
+
+/* Disabled state */
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.65;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn-loading:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(var(--color-white-rgb), 0.25);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.btn-secondary.btn-loading:after,
+.btn-text.btn-loading:after {
+  border: 2px solid rgba(var(--color-gold-rgb), 0.25);
+  border-top-color: var(--color-gold);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adaptations */
+@media (max-width: 768px) {
+  .btn {
+    min-width: 160px;
+    height: 48px;
+    padding: 0.625rem 1.5rem;
+  }
+  
+  .btn-lg {
+    min-width: 200px;
+    height: 56px;
+  }
+  
+  .btn-sm {
+    min-width: 120px;
+    height: 40px;
+    padding: 0.45rem 1.125rem;
+  }
+  
+  .btn-group {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    min-width: 140px;
+    font-size: 0.8125rem; /* 13px */
+    letter-spacing: 0.08em;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    width: 100%;
+  }
+} 

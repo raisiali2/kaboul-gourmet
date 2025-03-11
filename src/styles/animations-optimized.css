@@ -1,0 +1,205 @@
+/*
+ * animations-optimized.css
+ * Performance-optimized animation styles for refined interactions targeting 60fps
+ */
+
+/* 
+ * Performance optimizations for animations
+ */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-both {
+  will-change: transform, opacity;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent layout thrashing with these properties */
+.contain-paint {
+  contain: paint;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-content {
+  contain: content;
+}
+
+/* Add performance layers before animation starts */
+.prepare-animation {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Optimized fade animations - reduce work for GPU */
+.fade-in-optimized {
+  opacity: 0;
+  animation: fadeInOptimized 0.7s ease forwards;
+  will-change: opacity;
+}
+
+@keyframes fadeInOptimized {
+  to { opacity: 1; }
+}
+
+/* Optimized transform animations */
+.fade-up-optimized {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpOptimized 0.7s ease forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes fadeUpOptimized {
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up-optimized {
+    animation: fadeInOptimized 0.4s ease forwards;
+    transform: none;
+  }
+  
+  .prepare-animation,
+  .will-change-transform,
+  .will-change-opacity,
+  .will-change-both {
+    will-change: auto;
+  }
+  
+  /* Disable all animations if user prefers reduced motion */
+  .animated-section *,
+  .animated-element,
+  .animated-image-container * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Media query for mobile - reduce animation complexity */
+@media (max-width: 768px) {
+  /* Use smaller, simpler animations on mobile */
+  .fade-up-optimized {
+    transform: translateY(10px);
+  }
+  
+  /* Reduce animation delays on mobile */
+  .delay-100,
+  .delay-200,
+  .delay-300,
+  .delay-400,
+  .delay-500 {
+    animation-delay: 50ms !important;
+  }
+  
+  /* Reduce animation durations on mobile */
+  .animated-section *,
+  .animated-element,
+  .animated-image-container * {
+    animation-duration: 70% !important;
+    transition-duration: 70% !important;
+  }
+}
+
+/* Fix for iOS devices to ensure smooth animations */
+@supports (-webkit-overflow-scrolling: touch) {
+  .animated-section,
+  .animated-element,
+  .animated-image-container {
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Loading state for images */
+.image-loading {
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: imageLoadingShimmer 1.5s infinite;
+}
+
+@keyframes imageLoadingShimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Lazy load styles */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Prevent animation during page load */
+.preload * {
+  transition: none !important;
+}
+
+/* Add performance class for hero section */
+.hero-slider {
+  will-change: opacity;
+}
+
+.hero-slider .slide {
+  will-change: transform, opacity;
+}
+
+/* Optimized animations with minimal properties */
+.scale-hover {
+  transition: transform 0.2s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+.float-hover {
+  transition: transform 0.3s ease;
+}
+
+.float-hover:hover {
+  transform: translateY(-5px);
+}
+
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+} 

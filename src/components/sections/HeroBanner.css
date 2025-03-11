@@ -1,0 +1,272 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* Hero Banner */
+.hero-banner {
+  position: relative;
+  min-height: 700px;
+  width: 100%;
+  background-color: #fff;
+  color: #B9985A;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+}
+
+.hero-left {
+  width: 50%;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.hero-right {
+  width: 50%;
+  overflow: hidden;
+}
+
+.hero-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 700px;
+}
+
+.hero-description {
+  margin-bottom: var(--section-padding-xs);
+}
+
+.hero-description p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #B9985A;
+  font-weight: 400;
+  margin: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xs);
+  margin-bottom: var(--section-padding-sm);
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: var(--space-sm) 25px;
+  background-color: #B9985A;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background-color: rgba(185, 152, 90, 0.8);
+}
+
+.hero-quote-slider {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}
+
+.uk-slider-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.hero-quote-slider li {
+  display: none;
+}
+
+.hero-quote-slider li.uk-active {
+  display: block;
+}
+
+.quote-mark {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #B9985A;
+  margin: 0 0 -10px -15px;
+}
+
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+cite {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: var(--space-xs);
+  font-style: normal;
+}
+
+/* Carousel Indicators */
+.hero-carousel-indicators {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.hero-carousel-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-indicators .indicator.active {
+  background-color: #B9985A;
+}
+
+.brand-pattern {
+  height: 40px;
+  width: 100%;
+  background-size: auto 30px;
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* UK-specific classes */
+.uk-flex {
+  display: flex;
+}
+
+.uk-flex-middle {
+  align-items: center;
+}
+
+.uk-flex-column {
+  flex-direction: column;
+}
+
+.uk-width-10-20\@m {
+  width: 50%;
+}
+
+.uk-position-relative {
+  position: relative;
+}
+
+.uk-visible-toggle {
+  transition: all 0.3s ease;
+}
+
+.uk-slider-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.uk-child-width-1-1 > * {
+  width: 100%;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  .hero-description p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .uk-width-10-20\@m {
+    width: 100%;
+  }
+  
+  .hero-left {
+    padding: var(--section-padding-sm) 40px;
+    order: 2;
+  }
+  
+  .hero-right {
+    width: 100%;
+    order: 1;
+  }
+  
+  .hero-image {
+    min-height: 400px;
+  }
+  
+  .hero-description p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-left {
+    padding: var(--section-padding-xs) 30px;
+  }
+  
+  .hero-description p {
+    font-size: 1.4rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  
+  .hero-btn {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-left {
+    padding: var(--space-lg) 20px;
+  }
+  
+  .hero-description p {
+    font-size: 1.2rem;
+  }
+  
+  .quote-text {
+    font-size: 1.1rem;
+  }
+  
+  .quote-mark {
+    font-size: 2rem;
+  }
+} 

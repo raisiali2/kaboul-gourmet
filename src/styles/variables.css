@@ -1,0 +1,110 @@
+/* 
+ * variables.css - Global CSS variables for Kaboul Gourmet
+ * Exact color palette extracted from Galvin La Chapelle website
+ */
+
+:root {
+  /* Primary Colors */
+  --color-dark: #1a1a1a;       /* Dark background/text color */
+  --color-dark-rgb: 26, 26, 26; /* RGB values for animations */
+  --color-gold: #b79c67;       /* Refined gold accent color - exact match */
+  --color-gold-rgb: 183, 156, 103; /* RGB values for animations */
+  --color-light-gold: #d0c09e; /* Lighter gold for subtle accents */
+  --color-light-gold-rgb: 208, 192, 158; /* RGB values for animations */
+  
+  /* Neutral Colors */
+  --color-gray: #707070;       /* Gray for secondary text */
+  --color-gray-rgb: 112, 112, 112; /* RGB values for animations */
+  --color-light-gray: #f5f5f5; /* Light gray for backgrounds and hover states */
+  --color-light-gray-rgb: 245, 245, 245; /* RGB values for animations */
+  --color-off-white: #f9f9f9;  /* Off-white for subtle backgrounds */
+  --color-off-white-rgb: 249, 249, 249; /* RGB values for animations */
+  --color-white: #ffffff;      /* Pure white */
+  --color-white-rgb: 255, 255, 255; /* RGB values for animations */
+  
+  /* Functional Colors */
+  --color-black: #000000;      /* Pure black for certain text elements */
+  --color-black-rgb: 0, 0, 0;  /* RGB values for animations */
+  --color-overlay: rgba(0, 0, 0, 0.6); /* Dark overlay for modals and menus - a bit darker */
+  --color-shadow: rgba(0, 0, 0, 0.07);  /* Subtle shadow color */
+  
+  /* Call-to-action Variations */
+  --color-gold-hover: #9e865b; /* Darker gold for hover states */
+  --color-gold-hover-rgb: 158, 134, 91; /* RGB values for animations */
+  --color-gold-light: #c9b683; /* Lighter gold variation */
+  --color-gold-light-rgb: 201, 182, 131; /* RGB values for animations */
+  
+  /* Status Colors */
+  --color-success: #4a8c71;    /* Green for success messages */
+  --color-success-rgb: 74, 140, 113; /* RGB values for animations */
+  --color-error: #c45a5a;      /* Red for error messages */
+  --color-error-rgb: 196, 90, 90; /* RGB values for animations */
+  --color-warning: #d9af37;    /* Amber for warnings */
+  --color-warning-rgb: 217, 175, 55; /* RGB values for animations */
+  
+  /* Border Colors */
+  --color-border-light: #eeeeee; /* Light border color */
+  --color-border-light-rgb: 238, 238, 238; /* RGB values for animations */
+  --color-border: #dddddd;     /* Standard border color */
+  
+  /* Animation Properties */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* ========== SPACING SYSTEM ========== */
+  /* Base spacing units (using rem for better responsiveness) */
+  --space-unit: 0.5rem;        /* 8px base unit with 16px root font size */
+  
+  /* Standard spacing values */
+  --space-xxs: var(--space-unit);            /* 8px - Extra tiny spacing */
+  --space-xs: calc(var(--space-unit) * 2);   /* 16px - Tiny spacing */
+  --space-sm: calc(var(--space-unit) * 3);   /* 24px - Small spacing */
+  --space-md: calc(var(--space-unit) * 4);   /* 32px - Medium spacing */
+  --space-lg: calc(var(--space-unit) * 5);   /* 40px - Large spacing */
+  --space-xl: calc(var(--space-unit) * 7);   /* 56px - Extra large spacing */
+  --space-xxl: calc(var(--space-unit) * 10); /* 80px - XXL spacing */
+  
+  /* Section spacing - Galvin uses approximately 80px for section padding */
+  --section-padding: calc(var(--space-unit) * 10);   /* 80px - Standard section padding */
+  --section-padding-sm: calc(var(--space-unit) * 7); /* 56px - Smaller section padding */
+  --section-padding-xs: calc(var(--space-unit) * 5); /* 40px - Extra small section padding */
+  
+  /* Component spacing */
+  --component-margin: var(--space-xl);          /* 56px - Standard component margin */
+  --component-padding: var(--space-lg);         /* 40px - Standard component padding */
+  
+  /* Header-specific spacing */
+  --header-height: 90px;          /* Total header height - reduced from 130px */
+  --header-padding: var(--space-sm);  /* Header padding */
+  
+  /* Container padding */
+  --container-padding-lg: 2.5rem;    /* 40px container padding */
+  --container-padding-md: 1.875rem;  /* 30px container padding */
+  --container-padding-sm: 1.25rem;   /* 20px container padding */
+  --container-padding-xs: 0.9375rem; /* 15px container padding */
+  
+  /* Element spacing */
+  --element-margin: var(--space-md);   /* Standard margin between elements */
+  --element-padding: var(--space-md);  /* Standard padding for elements */
+  
+  /* Text spacing */
+  --text-margin-bottom: var(--space-md);  /* Standard margin below text blocks */
+  --heading-margin-bottom: var(--space-lg);  /* Standard margin below headings */
+  
+  /* Button spacing - using rem for responsiveness */
+  --button-padding-v: 0.75rem;    /* 12px Vertical button padding */
+  --button-padding-h: 1.875rem;   /* 30px Horizontal button padding */
+  
+  /* Container max widths - matching Galvin's responsive container sizes */
+  --container-max-width: 1300px;           /* Maximum container width */
+  --container-max-width-xl: 1200px;        /* XL container width */
+  --container-max-width-lg: 1140px;        /* Large container width */
+  --container-max-width-md: 960px;         /* Medium container width */
+  --container-max-width-sm: 720px;         /* Small container width */
+  --container-max-width-xs: 540px;         /* Extra small container width */
+  
+  /* Grid system */
+  --grid-gutter: 30px;           /* Standard gutter between grid items */
+  --grid-gutter-sm: 20px;        /* Smaller gutter for tighter layouts */
+} 

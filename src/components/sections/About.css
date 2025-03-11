@@ -1,0 +1,174 @@
+/* Import global variables */
+@import '../../styles/variables.css';
+
+/* About Section */
+.about-section {
+  padding: 5rem 0;
+  background-color: white;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.elegant-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: #B9985A; /* Golden color like in Galvin */
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.about-button {
+  display: inline-block;
+  background-color: #B9985A;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.about-button:hover {
+  background-color: #8B5D33;
+  transform: translateY(-3px);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  background-color: #8B5D33;
+  /* We'll use a solid color instead of an image for now */
+  background-size: cover;
+  background-position: center;
+}
+
+.about-testimonials {
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.testimonial-slide {
+  max-width: 700px;
+  margin: 0 auto;
+  display: none;
+}
+
+.testimonial-slide.active {
+  display: block;
+}
+
+blockquote {
+  position: relative;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  font-family: 'Georgia', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: #B9985A;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.quote-citation {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.quote-source {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-image {
+    min-height: 350px;
+    order: -1;
+  }
+  
+  .elegant-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .elegant-text {
+    font-size: 1.5rem;
+  }
+  
+  .about-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .about-button {
+    flex: 1;
+    min-width: 160px;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .quote-text,
+  .quote-citation {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .elegant-text {
+    font-size: 1.3rem;
+  }
+  
+  .about-buttons {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    min-height: 250px;
+  }
+} 

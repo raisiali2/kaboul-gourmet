@@ -1,0 +1,162 @@
+/* 
+ * Separator.css - Elegant dividing lines matching Galvin La Chapelle's visual style
+ */
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0;
+  height: 2px;
+  position: relative;
+}
+
+.separator-inner {
+  display: block;
+  position: relative;
+}
+
+/* Gold separator - primary style */
+.separator-gold {
+  height: 1px;
+}
+
+.separator-gold .separator-inner {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+/* Small gold separator */
+.separator-small {
+  height: 1px;
+}
+
+.separator-small .separator-inner {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+/* Centered separator */
+.separator-centered {
+  justify-content: center;
+}
+
+/* Left-aligned separator */
+.separator-left {
+  justify-content: flex-start;
+}
+
+/* Right-aligned separator */
+.separator-right {
+  justify-content: flex-end;
+}
+
+/* Light separator for dark backgrounds */
+.separator-light .separator-inner {
+  background-color: var(--color-white);
+  opacity: 0.6;
+}
+
+/* Dark separator for light backgrounds */
+.separator-dark .separator-inner {
+  background-color: var(--color-dark);
+  opacity: 0.2;
+}
+
+/* Full width separator with gold center */
+.separator-full {
+  position: relative;
+  overflow: visible;
+}
+
+.separator-full::before,
+.separator-full::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background-color: var(--color-border-light);
+}
+
+.separator-full::before {
+  left: 0;
+  right: calc(50% + 40px);
+}
+
+.separator-full::after {
+  right: 0;
+  left: calc(50% + 40px);
+}
+
+.separator-full .separator-inner {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold);
+  z-index: 1;
+}
+
+/* Animation for elegant entrance */
+.separator-animated .separator-inner {
+  animation: separatorAnimation 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes separatorAnimation {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .separator {
+    margin: 1.5rem 0;
+  }
+  
+  .separator-gold .separator-inner,
+  .separator-full .separator-inner {
+    width: 50px;
+  }
+  
+  .separator-small .separator-inner {
+    width: 30px;
+  }
+  
+  .separator-full::before {
+    right: calc(50% + 30px);
+  }
+  
+  .separator-full::after {
+    left: calc(50% + 30px);
+  }
+}
+
+@media (max-width: 576px) {
+  .separator {
+    margin: 1rem 0;
+  }
+  
+  .separator-gold .separator-inner,
+  .separator-full .separator-inner {
+    width: 40px;
+  }
+  
+  .separator-small .separator-inner {
+    width: 25px;
+  }
+  
+  .separator-full::before {
+    right: calc(50% + 25px);
+  }
+  
+  .separator-full::after {
+    left: calc(50% + 25px);
+  }
+} 
